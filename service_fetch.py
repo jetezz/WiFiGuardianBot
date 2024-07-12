@@ -7,11 +7,15 @@ class States(Enum):
     TIMEOUT_ERROR = 3
     SERVIDOR_ERROR = 4
 
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
+    }
+
 def fetch_server_data(url):   
-    
+    global headers
     try:
         # Realiza la solicitud HTTP GET con un tiempo límite de 5 segundos
-        response = requests.get(url, timeout=5)
+        response = requests.get(url,headers = headers, timeout=5)
 
         print(response)
         
