@@ -12,6 +12,8 @@ def fetch_server_data(url):
     try:
         # Realiza la solicitud HTTP GET con un tiempo límite de 5 segundos
         response = requests.get(url, timeout=5)
+
+        print(response)
         
         # Comprueba si la solicitud fue exitosa
         if response.status_code == 200:
